@@ -1,12 +1,12 @@
 'use strict';
 
 module.change_code = 1;
-
+var config;
 var alexa       = require('alexa-app'),
-	config      = require('./config.json'),
 	levenshtein = require('fast-levenshtein'),
 	app         = new alexa.app('mint-check');
 
+	
 
 //shim for running on heroku experiment
 if(process != null && process.env != null && process.env.hasOwnProperty('mintUsername'))
@@ -19,7 +19,9 @@ if(process != null && process.env != null && process.env.hasOwnProperty('mintUse
 	
 	console.log('Username: ' + config.username);
 }
-else{
+else
+{
+	config = require('./config.json');
 	console.log('Loaded credentials from config file');
 }
 	
