@@ -7,6 +7,19 @@ var alexa       = require('alexa-app'),
 	levenshtein = require('fast-levenshtein'),
 	app         = new alexa.app('mint-check');
 
+
+//shim for running on heroku experement
+if(process != null && process.env != null && process.env.hasOwnProperty('mintUsername'))
+{
+	console.log('Running on heroku. Attempting to load vars from environment variables');
+	
+	config = new Object();
+	config.username = process.env['mintUsername'];
+	config.password = process.env['mintPassword'];
+	
+	console.log('Username: ' + config.username);
+}
+	
 app.launch( function( request, response ) {
 	response.say( 'Welcome to Mint Account Balance Checker.' ).reprompt( 'Say Check Balance of account name to get its balance or say list accounts to hear all options' ).shouldEndSession( false );
 } );
