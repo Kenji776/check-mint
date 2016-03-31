@@ -19,6 +19,9 @@ if(process != null && process.env != null && process.env.hasOwnProperty('mintUse
 	
 	console.log('Username: ' + config.username);
 }
+else{
+	console.log('Loaded credentials from config file');
+}
 	
 app.launch( function( request, response ) {
 	response.say( 'Welcome to Mint Account Balance Checker.' ).reprompt( 'Say Check Balance of account name to get its balance or say list accounts to hear all options' ).shouldEndSession( false );
