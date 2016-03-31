@@ -1,0 +1,32 @@
+{
+  "name": "mint-check",
+  "version": "0.0.1",
+  "description": "Mint.com Account Balance Checker For Alexa (Amazon Echo)",
+  "main": "index.js",
+  "dependencies": {
+    "alexa-app": "^2.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kenji776/AlexaMint.git"
+  },
+  "keywords": [
+    "mint",
+    "amazon",
+    "echo",
+    "alexa",
+    "alexa-app",
+    "alexa-app-server",
+    "node.js"
+  ],
+  "author": "Dan Llewellyn <kenji776@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kenji776/AlexaMint/issues"
+  },
+  "homepage": "https://github.com/Kenji776/AlexaMint#readme"
+}
