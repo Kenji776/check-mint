@@ -8,7 +8,7 @@ var alexa       = require('alexa-app'),
 	app         = new alexa.app('mint-check');
 
 
-//shim for running on heroku experement
+//shim for running on heroku experiment
 if(process != null && process.env != null && process.env.hasOwnProperty('mintUsername'))
 {
 	console.log('Running on heroku. Attempting to load vars from environment variables');
