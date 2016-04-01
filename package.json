@@ -1,7 +1,7 @@
 {
   "name": "mint-check",
   "version": "1.0.0",
-  "description": "mint check",
+  "description": "mint check updated package to force update. Screw you heroku",
   "main": "index.js",
   "dependencies": {
     "alexa-app": "^2.3.2",
