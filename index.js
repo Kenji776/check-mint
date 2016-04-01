@@ -169,12 +169,18 @@ app.intent( 'getBalanceIntent', {
 					var checkAccount = account.fiName.toLowerCase();
 
 					var thisScore = levenshtein.get(checkAccount, requestedAccount);
-
+					
+					console.log('Score of ' + checkAccount + ' is ' + thisScore);
+					
 					if(thisScore < bestMatchScore)
 					{
+						console.log('New Best Match Set To ' + checkAccount + ' at index ' + currentIndex);
+						
 						bestMatchIndex = currentIndex;
 						bestMatchScore = thisScore;
 					}
+					
+					currentIndex++;
 				});
 
 				if(bestMatchScore < 5 && bestMatchIndex != -1)
@@ -184,7 +190,7 @@ app.intent( 'getBalanceIntent', {
 
 				//read off the balance.
 
-				if(bestMatchIndex != -1)
+				if(requestedAccountData != null)
 				{
 					response.say( 'The balance of account ' + requestedAccountData.fiLoginDisplayName + ' is ' +  requestedAccountData.value + ' ' + requestedAccountData.currency + ' last updated ' + requestedAccountData.lastUpdatedInString + ' ago').send();
 				}
